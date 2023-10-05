@@ -13,6 +13,14 @@ window.onload = function () {
       isActive: false,
       inactiveResult: true,
       activeResult: false,
+      activeFixedPri: false,
+      tell: "",
+      sim: "",
+      plan: "",
+      planPri: "",
+      planPri2: "",
+      fixed: "",
+      fixedPri: "",
     },
     created: async function () {
       const res = await fetch("./asset/qA.json");
@@ -22,7 +30,6 @@ window.onload = function () {
       const pricesSub = await res1.json();
       this.prices = pricesSub;
       console.log(this.qA);
-      console.log(this.prices.fixedPrice.length);
     },
     methods: {
       next: function (x) {
@@ -101,12 +108,7 @@ window.onload = function () {
             }
           }
         }
-        console.log(this.keepPri);
-        let totalSum = this.keepPri.reduce(function (sum, element = undefined) {
-          return sum + element;
-        }, 0);
         this.resultCircuit = 1;
-        this.resultFee = totalSum;
         this.inactiveResult = false;
         this.activeResult = true;
       },
@@ -114,7 +116,22 @@ window.onload = function () {
         this.active = !this.active;
         this.isActive = !this.isActive;
       },
-      saito: function (x) {
+      reflectionFixedPri: function (x) {
+        for (i = 0; i < x.length; i++){
+          if (this.keepAns[2].ans === x[i][0]) {
+            this.fixedPri = x[i][1];
+          }
+        }
+      },
+      reflectionPlanPri: function (x, y) {
+        for (i = 0; i < x.length; i++){
+          if (this.keepAns[y].ans === x[i][0]) {
+            this.planPri = x[i][1].toLocaleString();
+            this.planPri2 = x[i][1];
+          }
+        }
+      },
+      dataSave: function (x) {
         for (i = 0; i < this.qA[this.current_slide].ans.length; i++) {
           if (this.questionAnswer === this.qA[this.current_slide].ans[i].msg1.text) {
             this.saveAns(
@@ -125,6 +142,56 @@ window.onload = function () {
             if (x !== "") {
               this.next(x);
             }
+            if (this.keepAns[0].ans === "必要") {
+              if (this.keepAns.length === 1) {
+                this.tell = this.keepAns[0].breakdown;
+              }
+              if (this.keepAns.length === 2) {
+                this.sim = this.keepAns[1].breakdown;
+              }
+              if (this.keepAns.length === 3) {
+                this.activeFixedPri = true;
+                this.fixed = this.keepAns[2].breakdown;
+                this.reflectionFixedPri(this.prices.fixedPrice);
+              }
+              if (this.keepAns.length === 4) {
+                this.plan = this.keepAns[3].breakdown;
+                this.reflectionPlanPri(this.prices.SIMeSIM, 3);
+              }
+            }
+            if (this.keepAns[0].ans === "不要") {
+              this.planPri = 0;
+              this.planPri2 = 0;
+              if (this.keepAns.length === 1) {
+                this.tell = this.keepAns[0].breakdown;
+              }
+              if (this.keepAns.length === 2) {
+                this.fixedPri = 0;
+                this.activeFixedPri = false;
+                this.sim = this.keepAns[1].breakdown;
+              }
+              if (this.keepAns.length === 3 && this.keepAns[1].ans === "SMSを使う") {
+                this.plan = this.keepAns[2].breakdown;
+                this.reflectionPlanPri(this.prices.SMS, 2);
+              }
+              if (this.keepAns.length === 3 && this.keepAns[2].ans === "データeSIMを使う") {
+                this.sim = this.keepAns[2].breakdown;
+              }
+              if (this.keepAns.length === 3 && this.keepAns[2].ans === "データeSIMは使わない") {
+                this.sim = this.keepAns[2].breakdown;
+              }
+              if (this.keepAns.length === 4) {
+                this.plan = this.keepAns[3].breakdown;
+                if (this.keepAns[2].ans === "データeSIMを使う") {
+                  this.reflectionPlanPri(this.prices.dataeSIM, 3);
+                }
+                if (this.keepAns[2].ans === "データeSIMは使わない") {
+                  this.reflectionPlanPri(this.prices.notDataeSIM, 3);
+                }
+              }
+            }
+            // 合計料金をリアルタイムで計算
+            this.resultFee = (this.planPri2 + this.fixedPri).toLocaleString();
           }
         }
       }
@@ -133,20 +200,20 @@ window.onload = function () {
       questionAnswer: function () {
         if (this.current_slide === 0) {
           if (this.questionAnswer === "必要") {
-            this.saito(1);
+            this.dataSave(1);
           }
           if (this.questionAnswer === "不要") {
-            this.saito(4);
+            this.dataSave(4);
           }
         }
         if (this.current_slide === 1 && this.questionAnswer !== "") {
-            this.saito(2);
+            this.dataSave(2);
         }
         if (this.current_slide === 2 && this.questionAnswer !== "") {
-            this.saito(3);
+            this.dataSave(3);
         }
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 3 && this.keepAns[1].ans !== "SMSを使う") {
-            this.saito(3);
+            this.dataSave(3);
             console.log("finish");
             console.log(this.keepAns);
             this.totalOutput();
@@ -154,7 +221,7 @@ window.onload = function () {
         // 最後の質問で再度選択された場合
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 4) {
             this.keepAns.pop();
-            this.saito(3);
+            this.dataSave(3);
             console.log("finish");
             console.log(this.keepAns);
             this.totalOutput();
@@ -162,28 +229,28 @@ window.onload = function () {
         // 最後の質問で再度選択された場合(最初の質問で「不要」、2つ目の質問で「SIMを使う」が選択されている場合)
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 3 && this.keepAns[1].ans === "SMSを使う") {
           this.keepAns.pop();
-          this.saito(3);
+          this.dataSave(3);
           console.log("finish");
           console.log(this.keepAns);
           this.totalOutput();
       }
         // 最初の質問で「不要」、2つ目の質問で「SIMを使う」が選択された場合
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 2) {
-          this.saito(3);
+          this.dataSave(3);
           console.log("finish");
           console.log(this.keepAns);
           this.totalOutput();
       }
         if (this.current_slide === 4) {
           if (this.questionAnswer === "SMSを使う") {
-            this.saito(3);
+            this.dataSave(3);
           }
           if (this.questionAnswer === "SMSは使わない") {
-            this.saito(5);
+            this.dataSave(5);
           }
         }
         if (this.current_slide === 5 && this.questionAnswer !== "") {
-            this.saito(3);
+            this.dataSave(3);
         }
       },
     },

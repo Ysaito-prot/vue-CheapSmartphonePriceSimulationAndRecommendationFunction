@@ -257,12 +257,12 @@
                                                                 </div>
                                                                 <div class="price-detail">
                                                                     <div class="line plan-line use-monthly-discount-line use-gbadd-cp-line">
-                                                                        <div class="left bd-name" data-sync-id="line-name">音声SIM5ギガプラン</div>
-                                                                        <span class="right">???円</span>
+                                                                        <div class="left bd-name" data-sync-id="line-name">{{tell}}{{sim}}{{plan}}</div>
+                                                                        <span class="right">{{planPri}}円</span>
                                                                     </div>
-                                                                    <div class="line voice-free-line">
-                                                                        <div class="left bd-name" data-sync-id="line-name">通話定額 10分＋</div>
-                                                                        <span class="right">???円</span>
+                                                                    <div class="line voice-free-line" v-if="activeFixedPri">
+                                                                        <div class="left bd-name" data-sync-id="line-name">{{fixed}}</div>
+                                                                        <span class="right">{{fixedPri}}円</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="delete-btn-area">
