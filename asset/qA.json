@@ -311,7 +311,7 @@
         "recommend": "",
         "img": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_sms_yes_on.png",
         "grayImg": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_sms_yes.png",
-        "detailed": "SIM"
+        "detailed": "SMS"
       },
       {
         "msg1": {
@@ -367,7 +367,7 @@
         "recommend": "",
         "img": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_esim_no_on.png",
         "grayImg": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_esim_no.png",
-        "detailed": ""
+        "detailed": "データ"
       }
     ],
     "num": "two-items",
