@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>料金プランかんたん診断</title>
+        <meta content="料金プランかんたん診断" name="description" />
+        <meta content="width=device-width, initial-scale=1, initial-scale=1.0" name="viewport" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body class="mizumawari_bath_ppc01">
+        <div id="app">
+            <div id="wrapper">
+                <div id="headback" class="smp_off">
+                    <header id="global_nav">
+                        <div class="clearfix nav1">
+                            <div id="logoArea" class="logoArea">
+                                <div class="logo">
+                                    <a href="/">
+                                        <img src="https://www.iijmio.jp/image/logo.jpg" alt="IIJmioロゴ">
+                                    </a>
+                                </div>
+                                <div class="iij-30th-logo">
+                                    <a href="https://www.iij.ad.jp/30th/">
+                                        <img src="https://www.iijmio.jp/image/logo_30th.png" alt="IIJ30th">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="nav2">
+                                <div class="head_sub_02 clearfix">
+                                    <div class="h_search_02">
+                                        <div class="h_login_02">
+                                            <div id="logout">
+                                                <a href="/auth/login/">
+                                                <img src="https://www.iijmio.jp/image/login-btn.jpg" alt="ログイン">
+                                            </a>
+                                            </div>
+                                        </div>
+                                        <div class="ipv6">
+                                            <a href="/guide/outline/ipv6/icon/">
+                                                <img class="ipv6status" src="https://www.iijmio.jp/image/hn_ipv6.gif" alt="IPv6接続状態">
+                                            </a>
+                                        </div>
+                                        <div class="search">
+                                            <form id="ss-form1" action="/search/sample.html" method="get" accept-charset="UTF-8">
+                                                <input type="text" id="ss-query1" name="query" autocomplete="off" aria-autocomplete="none">
+                                                <input type="submit" value="検索" onclick="document.charset='UTF-8';">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top_nav clearfix">
+                                    <div class="top_nav_list clearfix">
+                                        <div class="top_nav_list clearfix">
+                                            <ul class="top_nav">
+                                                <li><a href="/member/ ">会員専用ページ</a></li>
+                                                <li><a href="/campaign/">キャンペーン</a></li>
+                                                <li><a href="/hdc/visitors/" target="_blank">外国人の方&nbsp;English</a></li>
+                                                <li class="help"><a href="https://help.iijmio.jp/">FAQホーム</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="scroll_nav" class>
+                            <div class="navArea clearfix">
+                                <ul id="nav" class="clearfix">
+                                    <li class="line">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/global_menu/icon_plan.png" alt="料金・プラン">
+                                                    <span class="menu-icon-text">料金・プラン</span>
+                                                </aside>
+                                            </a>
+                                    </li>
+                                    <li class="line">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/global_menu/icon_plan.png" alt="料金・プラン">
+                                                    <span class="menu-icon-text">SIM/eSIM</span>
+                                                </aside>
+                                            </a>
+                                    </li>
+                                    <li class="line">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/global_menu/icon_plan.png" alt="料金・プラン">
+                                                    <span class="menu-icon-text">端末・セット</span>
+                                                </aside>
+                                            </a>
+                                    </li>
+                                    <li class="line">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/global_menu/icon_plan.png" alt="料金・プラン">
+                                                    <span class="menu-icon-text">mioひかり</span>
+                                                </aside>
+                                            </a>
+                                    </li>
+                                    <li class="line">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/global_menu/icon_plan.png" alt="料金・プラン">
+                                                    <span class="menu-icon-text">サポート・店舗</span>
+                                                </aside>
+                                            </a>
+                                    </li>
+                                    <li class="line">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/global_menu/icon_plan.png" alt="料金・プラン">
+                                                    <span class="menu-icon-text">法人のお客様</span>
+                                                </aside>
+                                            </a>
+                                    </li>
+                                    <li class="line2">
+                                        <a href="/hdc/spec/">
+                                                <aside class="icon-box">
+                                                    <img class="price menu-icon" src="https://www.iijmio.jp/image/sr-nav6.jpg" alt="ご購入・お申込み">
+                                                </aside>
+                                            </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <div class="mainArea fadein">
+                    <div id="pankuzu" class="smp_off">
+                        <div class="pankuzu_body">
+                            <a href="/" class="home">ホーム</a>
+                            <img alt="　" src="https://www.iijmio.jp/image/list.gif" width="13" height="9">
+                            <a href="/gigaplan/">ギガプラン</a>
+                            <img alt="　" src="https://www.iijmio.jp/image/list.gif" width="13" height="9"> 料金シミュレーション
+                        </div>
+                    </div>
+                </div>
+                <div id="giga_simulator" class="voicefree-cp monthly-discount">
+                    <div class="giga-simulator">
+                        <div class="content title-area">
+                            <div class="img-box">
+                                <img class="title-toggle_openimg pc" src="https://www.iijmio.jp/gigaplan/img/gigaSimulator2/title_pc.png" alt="料金プランかんたん診断">
+                            </div>
+                            <div id="sub_text" class="title-text"> 最大4つの質問に答えるだけで、あなたにピッタリな料金プランをご提案！ </div>
+                        </div>
+                        <div class="main-area">
+                            <!-- 回答エリア -->
+                            <!-- vue -->
+                            <div class="q-area content">
+                                <div id="q-boxs" class="slick-initialized slick-slider">
+                                    <div aria-live="polite" class="slick-list draggable">
+                                        <div class="slider-outer">
+                                            <transition-group :name="trans_name">
+                                                <div class="slider-inner" :key="idx" v-for="(item, idx) in qA" v-if="current_slide == idx">
+                                                    <div class="q-title">
+                                                        <div class="q-icon">Q</div>
+                                                        <span class="q-title-text" :key="idx">{{ qA[idx].qMsg}}</span>
+                                                    </div>
+                                                    <div class="q-items">
+                                                        <div class="q-item" data-value="1" v-for="subItem in item.ans" v-bind:class="qA[idx].txtPos">
+                                                            <input name="handle[Input_items_42]" v-bind:id="subItem.msg1.text" type="radio" v-model="questionAnswer" v-bind:value="subItem.msg1.text" class="radioBtn" data-ga-event="ga_event_contractorAlreadyDecided_1">
+                                                            <label v-bind:for="subItem.msg1.text" class="chatMessage-Question__button" v-on:click="onActive(subItem.msg1.text)">
+                                                                <template v-if="subItem.sale">
+                                                                    <div class="voicefree-sale osusume-wrap">
+                                                                        <div class="osusume">セール</div>
+                                                                    </div>
+                                                                </template>
+                                                                <template v-if="subItem.recommend">
+                                                                    <div class="osusume-wrap">
+                                                                        <div class="osusume">
+                                                                            <div class="tri"></div> オススメ!
+                                                                        </div>
+                                                                    </div>
+                                                                </template>
+                                                                <div class="q-item-text" v-bind:class="qA[idx].num">
+                                                                    <div class="q-item-icon voiceesim-no"><img v-bind:src="subItem.img" alt=""></div>
+                                                                    <div class="text-area main-text" v-bind:style="{fontSize: subItem.msg1.fontSize, fontWeight: subItem.msg1.fontWeight, color: subItem.msg1.color}">{{ subItem.msg1.text}}</div>
+                                                                    <div class="second-text" v-bind:style="{fontSize: subItem.msg2.fontSize, fontWeight: subItem.msg2.fontWeight, color: subItem.msg2.color}" v-if="subItem.msg2 !== ''">{{ subItem.msg2.text}}</div>
+                                                                    <div class="third-text" v-bind:style="{fontSize: subItem.msg3.fontSize, fontWeight: subItem.msg3.fontWeight, color: subItem.msg3.color}" v-if="subItem.msg3 !== ''">{{ subItem.msg3.text}}</div>
+                                                                    <div class="fourth-text" v-bind:style="{fontSize: subItem.msg4.fontSize, fontWeight: subItem.msg4.fontWeight, color: subItem.msg4.color}" v-if="subItem.msg4 !== ''">{{ subItem.msg4.text}}</div>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="q-anno-area" v-if="item.note1 !== ''"> {{ item.note1 }}<br>
+                                                        <span class="red" v-if="item.note2 !== ''">{{ item.note2 }}</span>
+                                                    </div>
+                                                    <div class="q-sup-btns" v-if="item.img !== ''">
+                                                        <a class="q-esim-btn" href="/gigaplan/esim/phone/" target="_blank"><img v-bind:src="item.img"></a>
+                                                    </div>
+                                                </div>
+                                            </transition-group>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="q-move-btn-area">
+                                    <div class="q-back-btn" @click="prevQ()" v-if="priBtn">前の設問にもどる</div>
+                                    <div class="q-back-btn disabled" v-if="priBtnSub">前の設問にもどる</div>
+                                </div>
+                            </div>
+                            <!-- 結果表示エリア -->
+                            <div id="result_area" class="result-area content">
+                                <div class="cp-obi-area">
+                                    <div class="cp-obi">
+                                        <div class="transform-italic">
+                                            <span class="cp-msg">音声限定！ 最大3ヶ月間月額300円引き＆データ20％増量！（11/30まで）</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="diagnosis-head">
+                                    <img class="pc" src="https://www.iijmio.jp/gigaplan/img/gigaSimulator2/diagnosis_title_pc.png" alt="診断結果">
+                                </div>
+                                <div class="content result-list">
+                                    <div class="inner-box">
+                                        <div class="result-label pc">
+                                            <div class="label-diagnosis">診断結果</div>
+                                            <div class="label-result">合計</div>
+                                        </div>
+                                        <div class="result-detail-wrap">
+                                            <div class="result-detail">
+                                                <div class="detail-line-sum">
+                                                    <span class="line-sum line-title">
+                                                        <span class="line-label w-back-label">回線数</span>
+                                                        <span class="line-cover">
+                                                            <span class="line" v-if="inactiveResult">-</span>
+                                                            <span class="line" v-if="activeResult">{{ resultCircuit }}</span>
+                                                            <span>回線</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="detail-giga-sum">
+                                                    <span class="line-sum line-title">
+                                                        <span class="line-label w-back-label">データ容量</span>
+                                                        <span class="line-cover">
+                                                            <span class="gb" v-if="inactiveResult">-</span>
+                                                            <span class="gb" v-if="activeResult">{{ resultCap }}</span>
+                                                            <span>GB</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                                <div class="detail-price-sum">
+                                                    <span class="line-sum line-title">
+                                                        <span class="line-label w-back-label">月額</span>
+                                                        <span class="line-cover">
+                                                            <span class="price" v-if="inactiveResult">-</span>
+                                                            <span class="price" v-if="activeResult">{{ resultFee }}</span>
+                                                            <span>円</span>
+                                                        </span>
+                                                    </span>
+                                                    <transition name="open1">
+                                                        <div class="qa__item">
+                                                            <button class="qa__head js-ac" @click="onClickTitle" :class="{'is-open': isActive}" v-if="breakdownBtn">内訳</button>
+                                                            <button class="qa__head js-ac disabled" v-if="breakdownBtnSub">内訳</button>
+                                                        </div>
+                                                    </transition>
+                                                </div>
+                                            </div>
+                                            <transition name="open2">
+                                                <div class="qa__body" v-if="active" :class="{'is-open': isActive}">
+                                                    <div id="breakdown_target" class="result-breakdown">
+                                                        <div class="breakdown-label">内訳</div>
+                                                        <div class="breakdown-items" data-sync-id="breakdown-items">
+                                                            <div class="breakdown-item" id="result_1">
+                                                                <div class="price-no-area">
+                                                                    <div class="plan-no" data-sync-id="plan-no">1</div>
+                                                                </div>
+                                                                <div class="price-detail">
+                                                                    <div class="line plan-line use-monthly-discount-line use-gbadd-cp-line">
+                                                                        <div class="left bd-name" data-sync-id="line-name">{{tell}}{{sim}}{{plan}}</div>
+                                                                        <span class="right">{{planPri}}円</span>
+                                                                    </div>
+                                                                    <div class="line voice-free-line" v-if="activeFixedPri">
+                                                                        <div class="left bd-name" data-sync-id="line-name">{{fixed}}</div>
+                                                                        <span class="right">{{fixedPri}}円</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="delete-btn-area">
+                                                                    <div data-sync-id="line-delete" class="delete-btn">
+                                                                        <span class="pc">削除</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="result-anno">
+                                                        <div class="monthly-discount-anno">※月額割引はご利用開始月から最大3ヵ月間適用</div>
+                                                        <div class="monthly-discount-anno">※データ増量はご利用開始月から最大3ヵ月間適用</div>
+                                                        <div class="monthly-discount-anno">※通話定額割引はご利用開始月から最大3ヵ月間適用</div>
+                                                    </div>
+                                                </div>
+                                            </transition>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 診断結果エリア -->
+                            </div>
+                            <div class="anno-area content">
+                                <p>※上記費用には、SIMカード発行手数料、ユニバーサルサービス料、電話リレーサービス料は含まれておりません。</p>
+                                <p>※消費税の端数処理により実際の請求額が異なる場合があります。</p>
+                                <p>※シミュレーション結果は目安です。ご契約条件やご請求額を保証するものではありませんので、あらかじめご了承の上ご利用ください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 申し込みボタン -->
+                <section id="btn_area">
+                    <div class="application-btn lazyshow">
+                        <a href="/mobile/signup/">
+                            <strong>ギガプランのご購入・お申し込みはこちら</strong>
+                        </a>
+                    </div>
+                    <div class="anno-link notPeriod" end="20220601" style="display: block;">
+                    <a class="ar_link" href="/hdd/signup/">ミニマムスタート・ライトスタート・ファミリーシェアプランをお申し込みの方はこちら</a>
+                    </div>
+                </section>
+                <div id="bnr_area">
+                    <div class="bnr-box">
+                        <img class="pc" src="https://www.iijmio.jp/gigaplan/simulation/img/bnr_miowari.png" alt="おうちのインターネットもスマホとセットでさらにおトク！">
+                    </div>
+                </div>
+                <div id="footer">
+                    <div class="footer_main1">
+                        <div class="footer_map">
+                            <ul>
+                                <li><a href="/thissite/">このサイトのご利用について</a></li>
+                                <li><a href="/thissite/">情報セキュリティ基本方針</a></li>
+                                <li><a href="/thissite/">サイトマップ</a></li>
+                                <li><a href="/thissite/">初期契約解除について</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/thissite/">個人情報保護ポリシー</a></li>
+                                <li><a href="/thissite/">「特定商取引に関する法律」「古物営業法」に基づく表示</a></li>
+                                <li><a href="/thissite/">お問い合わせ</a></li>
+                            </ul>
+                        </div>
+                        <div class="page_top">
+                            <a href="#top" id="page-top" style>
+                                <img src="https://www.iijmio.jp/image/page-top.png" alt="page top">
+                            </a>
+                        </div>
+                    </div>
+                    <br class="clear">
+                    <div class="footer_main2">
+                        <div class="ft_smp_w">
+                            <div class="ft_logo">
+                                <a href="http://www.iij.ad.jp/" target="_blank"><img src="https://www.iijmio.jp/image/footer-logo.jpg" alt="IIJ"></a>
+                            </div>
+                            <div class="ft_info">
+                                <p>IIJmioは株式会社インターネットイニシアティブが提供する個人向けインターネットサービスです</p>
+                                <p class="kigyou"><a href="http://www.iij.ad.jp/company/" target="_blank">企業情報はこちら</a></p>
+                                <p class="copy">©2005-2023 Internet Initiative Japan Inc.</p>
+                                <p class="notification_number">〒102-0071 東京都千代田区富士見2-10-2 飯田橋グラン・ブルーム<br>
+                                届出番号(電気通信事業者)：第A-16-7006<br>
+                                代理店届出番号：第C2002871号
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ft_img">
+                            <a id="ft_img_twitter" href="http://twitter.com/share?url=https://www.iijmio.jp/gigaplan/simula…%E5%AE%89SIM/%E6%A0%BC%E5%AE%89%E3%82%B9%E3%83%9E%E3%83%9B%E3%81%AEIIJmio" onclick="window.open(this.href, 'twitter_tweet', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;">
+                            <img src="https://www.iijmio.jp/image/footer-sns-icon-01.jpg" alt="twitter">
+                            </a>
+                            <a id="ft_img_hatena" href="http://b.hatena.ne.jp/append?https://www.iijmio.jp/gigaplan/simulation/" onclick="window.open(this.href, 'hatena_window', 'width=650, height=650, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="blank">
+                            <img src="https://www.iijmio.jp/image/footer-sns-icon-02.jpg" alt="hatena">
+                            </a>
+                        </div>
+                        <div class="copy_smp pc_off">©2005-2023 Internet Initiative Japan Inc.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
+        <script src="app.js"></script> -->
+    </body>
+</html>

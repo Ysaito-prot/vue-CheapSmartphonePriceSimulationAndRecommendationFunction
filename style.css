@@ -1,0 +1,978 @@
+@charset "UTF-8";
+
+#headback {
+  background: url(https://www.iijmio.jp/image/head-back.png);
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  height: 138px;
+  width: 100%;
+}
+#global_nav {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  line-height: 0.8em;
+  z-index: 400;
+}
+.clearfix {
+  display: block;
+}
+.logoArea {
+  float: left;
+  width: 360px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 11px;
+  display: flex;
+  justify-self: start;
+  align-items: center;
+}
+a {
+  color: #222222;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: top;
+  background: transparent;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+#nav {
+  display: flex;
+}
+
+#global_nav ul li:first-child {
+  margin-left: 0;
+}
+
+.head_sub_02 {
+  height: 40px;
+  float: none;
+  width: auto;
+}
+
+.h_search_02 {
+  display: flex;
+  text-align: right;
+  width: 470px;
+  margin-top: 5px;
+}
+.ipv6 {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.h_login_02 {
+  margin-right: 10px;
+}
+
+.top_nav {
+  display: flex;
+  width: 460px;
+  margin: 0;
+  padding: 0;
+}
+.top_nav a {
+  font-size: 14px;
+}
+.top_nav_list li:first-child {
+  border-left: 1px dotted #b2b2b2;
+}
+
+.top_nav_list li {
+  border-right: 1px dotted #b2b2b2;
+  float: left;
+  padding: 5px 10px;
+}
+
+.navArea li.line > a .menu-icon-text {
+  padding-left: 5px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+.navArea li.line > a .icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 51px;
+  width: 125px;
+  padding: 0 5px;
+}
+
+.nav1 {
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+}
+
+.nav2 {
+  width: 450px;
+}
+
+#nav {
+  padding: 0;
+}
+
+#nav .line:first-child {
+  border-left: 1px dotted #b2b2b2;
+}
+
+#nav .line {
+  border-right: 1px dotted #b2b2b2;
+  float: left;
+  padding: 0 5px;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+/*-------------------------
+  ホーム>ギガプラン>料金シミュレーションの部分
+-------------------------*/
+#pankuzu {
+  background: url(https://www.iijmio.jp/image/pankuzu-back.jpg) repeat-x;
+  height: 33px;
+}
+.pankuzu_body {
+  width: 960px;
+  margin: 0px auto;
+  color: #ffffff;
+  padding: 10px 0;
+  font-size: 12px;
+}
+.pankuzu_body a.home {
+  padding-left: 18px;
+  background: url(https://www.iijmio.jp/image/home-icon.png) no-repeat 0 2px;
+}
+.pankuzu_body img {
+  vertical-align: middle;
+}
+
+/*-------------------------
+診断部分
+-------------------------*/
+#giga_simulator {
+  padding: 2rem 0;
+  background-image: url(https://www.iijmio.jp/gigaplan/img/gigaSimulator2/border-brown-bg.png);
+}
+.giga-simulator .title-area .img-box {
+  text-align: center;
+}
+.giga-simulator .title-area .title-text {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 2.4rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+#giga_simulator .main-area {
+  width: 960px;
+  background: #fff;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+.giga-simulator .q-area {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  background-color: #fff;
+}
+.giga-simulator .content {
+  width: 865px;
+  margin: 0 auto;
+}
+.voicefree-cp .cp-obi-area {
+  display: block !important;
+}
+.cp-obi-area {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+.cp-obi-area .cp-obi {
+  width: 530px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #e7198c;
+  color: #fff;
+  font-size: 0.9rem;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+}
+.cp-obi-area .cp-obi:after {
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+  border-color: rgba(0, 153, 255, 0);
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  margin-left: -10px;
+  border-top-color: #e7198c;
+  top: 100%;
+  left: 50%;
+}
+.giga-simulator .result-area {
+  background-color: #b07800;
+  padding: 0;
+}
+.giga-simulator .content {
+  width: 865px;
+  margin: 0 auto;
+}
+.anno-area {
+  font-size: 1.3rem;
+  margin-top: 0.5rem !important;
+}
+.giga-simulator .result-area .diagnosis-head {
+  text-align: center;
+  padding: 1rem 0;
+}
+.giga-simulator .result-area .diagnosis-head img {
+  width: 170px;
+}
+.giga-simulator .result-area .result-list .inner-box {
+  padding: 0.7rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.giga-simulator .result-area .result-list {
+  width: 97%;
+  border-top: 1px solid #fff;
+}
+.result-label {
+  width: 120px;
+  text-align: center;
+  color: #fff;
+  padding-top: 0.2rem;
+}
+.result-label .label-diagnosis {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+.result-label .label-result {
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+}
+.giga-simulator .result-area .result-detail-wrap {
+  width: 720px;
+  background-color: #fff;
+  padding-top: 10px;
+}
+.giga-simulator .result-area .result-detail {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #55340f;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.giga-simulator .result-area .result-detail .detail-line-sum {
+  padding: 0 1rem;
+  width: 25%;
+}
+.result-detail .detail-giga-sum {
+  padding: 0 1rem;
+  width: 30%;
+}
+.result-detail .detail-price-sum {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.giga-simulator .result-area .result-detail {
+  height: 50px;
+}
+.giga-simulator .result-area .result-detail .w-back-label {
+  padding: 0.5rem;
+}
+.giga-simulator .result-area .result-detail .detail-price-sum span.price,
+.giga-simulator .result-area .result-detail .detail-giga-sum span.gb,
+.giga-simulator .result-area .result-detail .detail-line-sum span.line {
+  font-size: 2rem;
+  font-weight: 400;
+  padding-right: 0.5rem;
+}
+.giga-simulator .result-area .result-detail,
+.giga-simulator .result-area .result-detail span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #55340f;
+}
+.anno-area p {
+  font-size: 0.8rem;
+  text-indent: -1rem;
+  padding-left: 1rem;
+  margin: 0;
+}
+.giga-simulator .result-area .result-detail .detail-price-sum span.price-sum,
+.giga-simulator .result-area .result-detail .detail-giga-sum span.giga-sum,
+.giga-simulator .result-area .result-detail .detail-line-sum span.line-sum {
+  text-align: center;
+  color: #bb8722;
+  font-weight: 400;
+}
+.giga-simulator .result-area .result-detail > div + div {
+  padding-left: 1rem;
+  border-left: 1px solid #ba8325;
+}
+
+/*-------------------------
+  内訳ボタン
+-------------------------*/
+.qa__head {
+  position: relative;
+  text-align: right;
+  padding: 5px 20px 5px 20px;
+  border: solid 2px #b97500;
+  border-radius: 30px;
+  background: #fff;
+  color: #b97500;
+  cursor: pointer;
+  width: 90px;
+}
+
+.qa__head::before {
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: 11px;
+  border-bottom: solid 2px #b97500;
+  border-left: solid 2px #b97500;
+  width: 10px;
+  height: 10px;
+  transform: rotate(-45deg);
+  transition: 0.2s;
+}
+.qa__head.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.qa__head.disabled::before {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.qa__body {
+  position: relative;
+  border-radius: 0 0 8px 8px;
+  color: black;
+  border: transparent;
+  padding: 0 20px;
+  line-height: 0;
+}
+
+.qa__body.is-open {
+  padding: 0;
+  line-height: 1.5;
+}
+
+.qa__head.is-open::before {
+  transform: rotate(135deg);
+}
+/*-------------------------
+  アコーディオン表示
+-------------------------*/
+.open2-enter,
+.open2-leave-to {
+  height: 0;
+  opacity: 0;
+}
+.open2-enter-to,
+.open2-leave {
+  height: 195px;
+  opacity: 1;
+}
+.open2-enter-active,
+.open2-leave-active {
+  transition: height 0.1s, opacity 0.1s;
+}
+
+/*-------------------------
+  内訳内容
+-------------------------*/
+.giga-simulator .result-area .result-breakdown {
+  margin: 2rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  border-top: solid 1px #b07800;
+  border-bottom: solid 1px #b07800;
+}
+.giga-simulator .result-area .result-breakdown .breakdown-label {
+  margin: 0;
+  padding: 0;
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0e4cb;
+  color: #b07800;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.giga-simulator .result-area .result-breakdown .breakdown-items {
+  width: 92%;
+}
+.giga-simulator
+  .result-area
+  .result-breakdown
+  .breakdown-items
+  .breakdown-item {
+  border-top: none;
+}
+.giga-simulator .result-area .breakdown-item {
+  display: flex;
+  justify-content: flex-start;
+}
+.giga-simulator .breakdown-item .price-no-area {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f3ee;
+}
+.giga-simulator .breakdown-item .price-detail {
+  width: 78%;
+}
+.giga-simulator .breakdown-item .line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .7rem;
+  padding-left: 1rem;
+}
+.giga-simulator .result-breakdown .breakdown-item .line + .line {
+  border-top: dashed 1px #cdc8c5;
+  padding: .7rem;
+  padding-left: 2.5rem;
+}
+.giga-simulator .breakdown-item .price-no-area div.plan-no {
+  margin: 0;
+  display: inline-block;
+  font-size: 1.2rem;
+  background-color: #b07800;
+  color: #fff;
+  padding: .2rem .7rem;
+}
+.giga-simulator .breakdown-item .line .bd-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.giga-simulator .breakdown-item .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.giga-simulator .breakdown-item .delete-btn-area {
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.giga-simulator .delete-btn {
+  cursor: pointer;
+  margin: 0 auto;
+  background-color: #979797;
+  color: #fff;
+  padding: .5rem .6rem .5rem 1.5rem;
+  position: relative;
+  border-radius: 30px;
+}
+.giga-simulator .delete-btn:before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 2px;
+  border-radius: 5px;
+  background: #fff;
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.giga-simulator .delete-btn:after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 2px;
+  border-radius: 5px;
+  background: #fff;
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+.use-cp .result-anno {
+  padding-top: 5px;
+}
+.result-anno {
+  width: 725px;
+  background-color: #b97500;
+  color: #fff;
+  font-size: 0.8rem;
+  padding-top: 5px;
+}
+.monthly-discount-anno {
+  display: block;
+}
+
+/*-------------------------
+  回答部分
+-------------------------*/
+.giga-simulator .q-area .q-title {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.giga-simulator .q-area .q-title .q-icon {
+  background-color: #e55397;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.3rem 1rem;
+}
+
+.giga-simulator .q-area .q-title .q-title-text {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.giga-simulator .q-area .q-items {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  column-gap: 10px;
+}
+
+.giga-simulator .q-area .two-item .q-item {
+  width: 180px;
+  padding: 20px 16px;
+  text-align: center;
+  box-sizing: initial;
+}
+
+.giga-simulator .q-area .q-item .q-item-text {
+  display: block;
+  flex-grow: 1;
+}
+
+.giga-simulator .q-area .q-item {
+  padding: 1.6rem 1rem;
+  background-color: #f4f4f4;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #cacaca;
+  display: flex;
+  position: relative;
+}
+.q-item-icon.voiceesim-no {
+  text-align: center;
+}
+.giga-simulator .q-area .q-item .q-item-text .text-area {
+  font-size: 1rem;
+  padding-left: 0;
+  padding-top: 1rem;
+}
+.giga-simulator .q-area .q-item-text .sub-text,
+.giga-simulator .q-area .text-area-box .sub-text {
+  font-size: 1rem;
+}
+.giga-simulator .q-area .two-item .q-item + .q-item {
+  margin-left: 2rem;
+}
+.giga-simulator .q-area .q-item + .q-item {
+  margin-top: 0;
+}
+.giga-simulator .q-area .two-item .q-item {
+  width: 180px;
+  text-align: center;
+  box-sizing: initial;
+}
+.q-anno-area {
+  text-indent: -1rem;
+  padding-left: -1rem;
+  text-align: left;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  font-size: 0.9em;
+}
+.red {
+  color: #e23333;
+}
+.giga-simulator .q-area .q-sup-btns {
+  width: 450px;
+  margin: auto;
+  text-align: right;
+}
+.giga-simulator .q-area .q-sup-btns img {
+  width: 205px;
+}
+
+.two-items {
+  width: 210px;
+}
+.four-items {
+  width: 150px;
+}
+.five-items {
+  width: 125px;
+}
+.txtCenter {
+  text-align: center;
+}
+.txtLeft {
+  text-align: left;
+}
+.third-text {
+  text-decoration: line-through;
+}
+.radioBtn {
+  display: none;
+}
+
+/*-------------------------
+　設問に戻るボタン
+-------------------------*/
+.giga-simulator .q-area .q-move-btn-area {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.q-back-btn {
+  width: 230px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #fff;
+  color: #b97500;
+  padding: 0.5rem 2rem 0.5rem 3rem;
+  margin: auto;
+  border-radius: 30px;
+  text-decoration: none;
+  position: relative;
+  border: solid 2px #b97500;
+}
+.q-back-btn::before {
+  position: absolute;
+  content: "";
+  top: 40%;
+  left: 7%;
+  border-bottom: solid 2px #b97500;
+  border-left: solid 2px #b97500;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+}
+.q-back-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  margin: 0 auto;
+}
+
+/*-------------------------
+  セール表示
+-------------------------*/
+.voicefree-cp .q-area .q-item .voicefree-sale.osusume-wrap {
+  right: 15px;
+}
+.giga-simulator .q-area .q-item .osusume-wrap {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+.voicefree-cp .q-area .q-item .voicefree-sale {
+  display: block;
+}
+.voicefree-cp .q-area .q-item .voicefree-sale .osusume {
+  background-color: #D7000D;
+  border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-topright: 0;
+}
+.giga-simulator .q-area .q-item .osusume {
+  height: 20px;
+  padding: 0 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  content: "";
+  font-weight: bold;
+  position: relative;
+  color: #FFF;
+  background-color: #E55397;
+  border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+}
+
+/*-------------------------
+  オススメ表示
+-------------------------*/
+.giga-simulator .q-area .q-item .osusume .tri {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  border-right: 15px solid #E55397;
+  border-bottom: 20px solid transparent;
+}
+
+/*-------------------------
+  選択肢が選択されたときの挙動
+-------------------------*/
+.colorChangeGlay {
+  background-color: rgb(188, 192, 192);
+       opacity:0.5;
+       box-shadow:none
+}
+.giga-simulator .q-area .q-item.is-active{
+  color: #E55397;
+  font-weight: bold;
+  background-color: rgba(255, 96, 181, 0.1);
+  border: 2px solid #E55397;
+  box-shadow:none
+}
+
+/*-------------------------
+  申し込みボタンエリア
+-------------------------*/
+#btn_area {
+  margin: 4rem 0;
+}
+.application-btn {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.application-btn a {
+  display: block;
+  position: relative;
+  max-width: 720px;
+  background: #23A33B;
+  box-shadow: 0px 3px 2px #ccc;
+  border-radius: 3px;
+  text-align: center;
+  padding: 24px 0px;
+  box-sizing: border-box;
+  color: #FFF;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  transition-duration: .05s;
+  user-select: none;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.application-btn a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid #FFF;
+  width: 16px;
+  height: 16px;
+  top: 30px;
+  left: 12px;
+  transform: rotate(45deg);
+}
+.anno-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+a.ar_link {
+  background-image: url(https://www.iijmio.jp/image/ar-icon.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #e7198c;
+  padding-left: 15px;
+}
+#bnr_area {
+  width: 960px;
+  margin: 4rem auto;
+}
+
+
+/*-------------------------
+  フッター
+-------------------------*/
+#footer {
+  width: 100%;
+  background: url(https://www.iijmio.jp/image/footer-back.png) repeat-x left
+    bottom;
+  height: 277px;
+  margin-bottom: 0 !important;
+}
+#footer .footer_body {
+  width: 960px;
+  margin: 0 auto;
+}
+#footer .footer_main1 {
+  width: 960px;
+  height: 83px;
+  margin: auto;
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+}
+#footer .footer_main1 .footer_map {
+  float: left;
+  width: 820px;
+  padding-top: 20px;
+}
+#footer .footer_main1 .footer_map ul {
+  display: flex;
+  width: 720px;
+  justify-content: space-between;
+  margin: 0;
+}
+.footer_map ul {
+  list-style: none;
+  padding: 0;
+}
+#footer .footer_main1 .footer_map li {
+  line-height: 1;
+  padding: 5px 15px 5px 15px;
+  background: url(https://www.iijmio.jp/image/fsm-icon.png) no-repeat 0 49%;
+}
+#footer .footer_main1 .footer_map li a {
+  font-size: 11px;
+}
+.page_top {
+  display: flex;
+  align-items: flex-end;
+}
+#footer .footer_main2 {
+  width: 960px;
+  margin: auto;
+  clear: both;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.ft_logo {
+  float: left;
+}
+.ft_info {
+  float: left;
+  padding-top: 5px;
+}
+.ft_info p {
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+.ft_info p.kigyou {
+  background: url(https://www.iijmio.jp/image/f-mini-icon.jpg) no-repeat;
+  padding-left: 15px;
+}
+.ft_info p.kigyou a:link {
+  color: #ffffff;
+}
+.ft_info p.copy {
+  color: #666666;
+}
+.ft_info p.notification_number {
+  color: #666666;
+  font-size: 11px;
+}
+.ft_img {
+  padding-bottom: 10px;
+}
+.ft_img img {
+  margin-right: 5px;
+}
+.pc_off {
+  display: none !important;
+}
+
+/*-------------------------
+  スライダー
+-------------------------*/
+.slider-outer {
+  position: relative;
+  width: 865px;
+  height: 420px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+.slider-inner {
+  position: absolute;
+  width: 865px;
+  height: 420px;
+}
+.btn {
+  position: relative;
+  margin: 0 auto 20px;
+  width: 90px;
+}
+/* -------------------------------- */
+/* 以下 Vue.js で使用するクラスの定義 */
+/* -------------------------------- */
+.next-enter-active,
+.next-leave-active,
+.prev-enter-active,
+.prev-leave-active {
+  transition: all 0.3s ease-out;
+}
+.next-enter {
+  transform: translateX(865px);
+}
+.next-enter-to {
+  transform: translateX(0);
+}
+.next-leave {
+  transform: translateX(0);
+}
+.next-leave-to {
+  transform: translateX(-865px);
+}
+.prev-enter {
+  transform: translateX(-865px);
+}
+.prev-enter-to {
+  transform: translateX(0);
+}
+.prev-leave {
+  transform: translateX(0);
+}
+.prev-leave-to {
+  transform: translateX(865px);
+}
