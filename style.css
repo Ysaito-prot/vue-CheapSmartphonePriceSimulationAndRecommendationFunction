@@ -295,7 +295,6 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* padding-top: 1rem; */
 }
 .giga-simulator .result-area .result-detail .detail-line-sum {
   padding: 0 1rem;
@@ -375,6 +374,15 @@ li {
   height: 10px;
   transform: rotate(-45deg);
   transition: 0.2s;
+}
+.qa__head.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.qa__head.disabled::before {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .qa__body {
@@ -693,6 +701,134 @@ li {
   height: 8px;
   transform: rotate(45deg);
 }
+.q-back-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  margin: 0 auto;
+}
+
+/*-------------------------
+  セール表示
+-------------------------*/
+.voicefree-cp .q-area .q-item .voicefree-sale.osusume-wrap {
+  right: 15px;
+}
+.giga-simulator .q-area .q-item .osusume-wrap {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+.voicefree-cp .q-area .q-item .voicefree-sale {
+  display: block;
+}
+.voicefree-cp .q-area .q-item .voicefree-sale .osusume {
+  background-color: #D7000D;
+  border-top-right-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-topright: 0;
+}
+.giga-simulator .q-area .q-item .osusume {
+  height: 20px;
+  padding: 0 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .8rem;
+  content: "";
+  font-weight: bold;
+  position: relative;
+  color: #FFF;
+  background-color: #E55397;
+  border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+}
+
+/*-------------------------
+  オススメ表示
+-------------------------*/
+.giga-simulator .q-area .q-item .osusume .tri {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  border-right: 15px solid #E55397;
+  border-bottom: 20px solid transparent;
+}
+
+/*-------------------------
+  選択肢が選択されたときの挙動
+-------------------------*/
+.colorChangeGlay {
+  background-color: rgb(188, 192, 192);
+       opacity:0.5;
+       box-shadow:none
+}
+.giga-simulator .q-area .q-item.is-active{
+  color: #E55397;
+  font-weight: bold;
+  background-color: rgba(255, 96, 181, 0.1);
+  border: 2px solid #E55397;
+  box-shadow:none
+}
+
+/*-------------------------
+  申し込みボタンエリア
+-------------------------*/
+#btn_area {
+  margin: 4rem 0;
+}
+.application-btn {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.application-btn a {
+  display: block;
+  position: relative;
+  max-width: 720px;
+  background: #23A33B;
+  box-shadow: 0px 3px 2px #ccc;
+  border-radius: 3px;
+  text-align: center;
+  padding: 24px 0px;
+  box-sizing: border-box;
+  color: #FFF;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  transition-duration: .05s;
+  user-select: none;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.application-btn a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid #FFF;
+  width: 16px;
+  height: 16px;
+  top: 30px;
+  left: 12px;
+  transform: rotate(45deg);
+}
+.anno-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+a.ar_link {
+  background-image: url(https://www.iijmio.jp/image/ar-icon.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #e7198c;
+  padding-left: 15px;
+}
+#bnr_area {
+  width: 960px;
+  margin: 4rem auto;
+}
+
 
 /*-------------------------
   フッター

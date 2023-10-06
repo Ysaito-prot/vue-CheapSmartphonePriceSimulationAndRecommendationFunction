@@ -116,7 +116,7 @@
           "fontWeight": "bold",
           "color": "#FF1493"
         },
-        "sale": "セール",
+        "sale": true,
         "img": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_5min_on.png",
         "grayImg": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_5min.png",
         "detailed": "通話定額5分＋"
@@ -146,7 +146,7 @@
           "fontWeight": "bold",
           "color": "#FF1493"
         },
-        "sale": "セール",
+        "sale": true,
         "img": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_10min_on.png",
         "grayImg": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_10min.png",
         "detailed": "通話定額10分＋"
@@ -176,7 +176,7 @@
           "fontWeight": "bold",
           "color": "#FF1493"
         },
-        "sale": "セール",
+        "sale": true,
         "img": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_kakehodai_on.png",
         "grayImg": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_kakehodai.png",
         "detailed": "通話定額 かけ放題＋"
@@ -237,7 +237,7 @@
         "msg2": { "text": "", "fontSize": "", "fontWeight": "", "color": "" },
         "msg3": { "text": "", "fontSize": "", "fontWeight": "", "color": "" },
         "msg4": { "text": "", "fontSize": "", "fontWeight": "", "color": "" },
-        "recommend": "おススメ！",
+        "recommend": true,
         "img": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_5giga_on.png",
         "grayImg": "https://www.iijmio.jp/gigaplan/img/gigaSimulator2/icon_5giga.png",
         "detailed": "5ギガプラン"

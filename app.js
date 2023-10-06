@@ -21,6 +21,12 @@ window.onload = function () {
       planPri2: "",
       fixed: "",
       fixedPri: "",
+      priBtn: false,
+      priBtnSub: true,
+      breakdownBtn: false,
+      breakdownBtnSub: true,
+      // 前に回答した内容を記録
+      pastContent: [{ slideNum: 0, ans: "" },{ slideNum: 1, ans: "" },{ slideNum: 2, ans: "" },{ slideNum: 3, ans: "" },{ slideNum: 4, ans: "" },{ slideNum: 5, ans: "" },{ slideNum: 6, ans: "" }]
     },
     created: async function () {
       const res = await fetch("./asset/qA.json");
@@ -29,14 +35,16 @@ window.onload = function () {
       const res1 = await fetch("./asset/price.json");
       const pricesSub = await res1.json();
       this.prices = pricesSub;
-      console.log(this.qA);
     },
     methods: {
-      next: function (x) {
+      next: async function (x) {
         this.trans_name = "next";
         this.current_slide = x;
+        this.priBtn = true;
+        this.priBtnSub = false;
+        this.colorChange();
       },
-      prevQ: function () {
+      prevQ: async function () {
         this.trans_name = "prev";
         if (this.current_slide === 3 && this.keepAns.length === 4) {
           this.keepAns.pop();
@@ -48,16 +56,62 @@ window.onload = function () {
           this.current_slide = this.keepAns[this.keepAns.length - 1].sliderNum;
           this.keepAns.pop();
         }
+        else if (this.current_slide === 1 || this.current_slide === 4) {
+          this.current_slide = this.keepAns[this.keepAns.length - 1].sliderNum;
+          this.keepAns.pop();
+          this.priBtn = false;
+          this.priBtnSub = true;
+        }
         else {
           this.current_slide = this.keepAns[this.keepAns.length - 1].sliderNum;
           this.keepAns.pop();
         }
-        console.log(this.keepAns);
+        this.colorChange();
+      },
+      wait: function (time) {
+        return new Promise((resolve, reject) => {
+          setTimeout(resolve, time);
+        });
+      },
+      onActive(item) {
+        this.pastContent[this.current_slide].ans = item;
+        if (this.current_slide === 3) {
+          this.ScrollWindow("cp-msg");
+        }
+      },
+      ScrollWindow: function (elem) {
+        var element = document.getElementsByClassName(elem)[0];
+        var rect = element.getBoundingClientRect();
+        var elemtop = rect.top + window.pageYOffset;
+        document.documentElement.scrollTo({
+          top: elemtop - 20,
+          behavior: "smooth",
+        });
+      },
+      colorChange: async function () {
+        // 過去に回答したものと一致するものがあれば色を付ける
+        await this.wait(330);
+        let colorChanges = document.querySelectorAll('.text-area.main-text');
+        let qitem = document.querySelectorAll('.q-item');
+        if (this.pastContent[this.current_slide].ans !== "") {
+          for (i = 0; i < this.pastContent.length; i++){
+            for (j = 0; j < colorChanges.length; j++){
+              if (this.current_slide === this.pastContent[i].slideNum) {
+                if (this.pastContent[i].ans === colorChanges[j].innerHTML) {
+                  qitem[j].classList.add("is-active");
+                  qitem[j].classList.remove("colorChangeGlay");
+                } else {
+                  qitem[j].classList.remove("is-active");
+                  qitem[j].classList.add("colorChangeGlay");
+                }
+              }
+            }
+          }
+        }
       },
       saveAns: function (x, y, z) {
         this.keepAns.push({ sliderNum: x, ans: y, breakdown: z });
         this.questionAnswer = "";
-        console.log(this.keepAns);
         return this.keepAns;
       },
       totalOutput: function () {
@@ -111,6 +165,8 @@ window.onload = function () {
         this.resultCircuit = 1;
         this.inactiveResult = false;
         this.activeResult = true;
+        this.breakdownBtn = true;
+        this.breakdownBtnSub = false;
       },
       onClickTitle: function () {
         this.active = !this.active;
@@ -214,31 +270,23 @@ window.onload = function () {
         }
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 3 && this.keepAns[1].ans !== "SMSを使う") {
             this.dataSave(3);
-            console.log("finish");
-            console.log(this.keepAns);
             this.totalOutput();
         }
         // 最後の質問で再度選択された場合
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 4) {
             this.keepAns.pop();
             this.dataSave(3);
-            console.log("finish");
-            console.log(this.keepAns);
             this.totalOutput();
         }
         // 最後の質問で再度選択された場合(最初の質問で「不要」、2つ目の質問で「SIMを使う」が選択されている場合)
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 3 && this.keepAns[1].ans === "SMSを使う") {
           this.keepAns.pop();
           this.dataSave(3);
-          console.log("finish");
-          console.log(this.keepAns);
           this.totalOutput();
       }
         // 最初の質問で「不要」、2つ目の質問で「SIMを使う」が選択された場合
         if (this.current_slide === 3 && this.questionAnswer !== "" && this.keepAns.length === 2) {
           this.dataSave(3);
-          console.log("finish");
-          console.log(this.keepAns);
           this.totalOutput();
       }
         if (this.current_slide === 4) {

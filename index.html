@@ -163,7 +163,19 @@
                                                     <div class="q-items">
                                                         <div class="q-item" data-value="1" v-for="subItem in item.ans" v-bind:class="qA[idx].txtPos">
                                                             <input name="handle[Input_items_42]" v-bind:id="subItem.msg1.text" type="radio" v-model="questionAnswer" v-bind:value="subItem.msg1.text" class="radioBtn" data-ga-event="ga_event_contractorAlreadyDecided_1">
-                                                            <label v-bind:for="subItem.msg1.text" class="chatMessage-Question__button">
+                                                            <label v-bind:for="subItem.msg1.text" class="chatMessage-Question__button" v-on:click="onActive(subItem.msg1.text)">
+                                                                <template v-if="subItem.sale">
+                                                                    <div class="voicefree-sale osusume-wrap">
+                                                                        <div class="osusume">セール</div>
+                                                                    </div>
+                                                                </template>
+                                                                <template v-if="subItem.recommend">
+                                                                    <div class="osusume-wrap">
+                                                                        <div class="osusume">
+                                                                            <div class="tri"></div> オススメ!
+                                                                        </div>
+                                                                    </div>
+                                                                </template>
                                                                 <div class="q-item-text" v-bind:class="qA[idx].num">
                                                                     <div class="q-item-icon voiceesim-no"><img v-bind:src="subItem.img" alt=""></div>
                                                                     <div class="text-area main-text" v-bind:style="{fontSize: subItem.msg1.fontSize, fontWeight: subItem.msg1.fontWeight, color: subItem.msg1.color}">{{ subItem.msg1.text}}</div>
@@ -185,9 +197,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- vueここまで -->
                                 <div class="q-move-btn-area">
-                                    <div class="q-back-btn" @click="prevQ()">前の設問にもどる</div>
+                                    <div class="q-back-btn" @click="prevQ()" v-if="priBtn">前の設問にもどる</div>
+                                    <div class="q-back-btn disabled" v-if="priBtnSub">前の設問にもどる</div>
                                 </div>
                             </div>
                             <!-- 結果表示エリア -->
@@ -241,7 +253,8 @@
                                                     </span>
                                                     <transition name="open1">
                                                         <div class="qa__item">
-                                                            <button class="qa__head js-ac" @click="onClickTitle" :class="{'is-open': isActive}">内訳</button>
+                                                            <button class="qa__head js-ac" @click="onClickTitle" :class="{'is-open': isActive}" v-if="breakdownBtn">内訳</button>
+                                                            <button class="qa__head js-ac disabled" v-if="breakdownBtnSub">内訳</button>
                                                         </div>
                                                     </transition>
                                                 </div>
@@ -291,6 +304,22 @@
                                 <p>※シミュレーション結果は目安です。ご契約条件やご請求額を保証するものではありませんので、あらかじめご了承の上ご利用ください。</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!-- 申し込みボタン -->
+                <section id="btn_area">
+                    <div class="application-btn lazyshow">
+                        <a href="/mobile/signup/">
+                            <strong>ギガプランのご購入・お申し込みはこちら</strong>
+                        </a>
+                    </div>
+                    <div class="anno-link notPeriod" end="20220601" style="display: block;">
+                    <a class="ar_link" href="/hdd/signup/">ミニマムスタート・ライトスタート・ファミリーシェアプランをお申し込みの方はこちら</a>
+                    </div>
+                </section>
+                <div id="bnr_area">
+                    <div class="bnr-box">
+                        <img class="pc" src="https://www.iijmio.jp/gigaplan/simulation/img/bnr_miowari.png" alt="おうちのインターネットもスマホとセットでさらにおトク！">
                     </div>
                 </div>
                 <div id="footer">
